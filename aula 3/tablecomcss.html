@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Input</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Atividade Input com CSS</h1>
+    </header>
+
+    <main>
+        <form action="cadastro.php?" method="POST" >
+            <fieldset>
+                <legend>Cadastro de Pessoa</legend>
+            <ul>
+               <div class="box1">  
+                   <li>
+                       <label for="labelNome">Nome:</label>
+                       <input required maxlength="100" type="text" name="nomeName" id="nomeId">
+                   </li>
+                   <li>
+                       <label for="labelSobrenome">Sobrenome:</label>
+                       <input type="text" name="sobrenomeName" id="sobrenomeId" required maxlength="100">
+                   </li>
+                   <li>
+                       <label for="labelEmail">E-mail:</label>
+                       <input type="email" name="emailName" id="emailId" required>
+                   </li>
+               </div>
+                <div class="box2">
+                    <li>
+                        <label for="labelDataNasc">Data de Nascimento:</label>
+                        <input type="date" name="" id="" datemin="01/01/1920" datemax="01/01/2024">
+                    </li>
+                    <li>
+                        <label for="labelSexo">Sexo:</label>
+                        <label for="Masc">Masculino</label>
+                        <input type="radio" name="sexo" id="masculinoId">
+                        <label for="Femn">Feminino</label>
+                        <input type="radio" name="sexo" id="femininoId">
+                    </li>
+                </div>
+                <div class="box3">
+                    <li>
+                        <label for="labelEndereco">Endereço:</label>
+                        <input type="text" name="enderecoName" id="enderecoId" maxlength="200">
+                    </li>
+                    <li>
+                        <label for="labelCEP">CEP:</label>
+                        <input type="text" name="cepName" id="cepId" maxlength="10">
+                    </li>
+                    <li>
+                        <label for="labelCor">Cor Favorita</label>
+                        <input type="color" name="colorName" id="colorId">
+                    </li>
+                    <li>
+                        <label for="labelEstado">Estado:</label>
+                        <select name="estado" id="estadoId" autofocus>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="RS" autofocus="">Rio Grande do Sul</option>
+                            <option value="PR">Paraná</option>
+                        </select>
+                    </li>
+                </div>
+            </ul>
+                <input type="submit" value="ENVIAR">
+                <input type="reset" value="LIMPAR">
+                <input type="button" value="MENSAGEM" onclick="alert('Mensagem de Teste')">
+            </fieldset>
+        </form>
+    </main>
+</body>
+</html>

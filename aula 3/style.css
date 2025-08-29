@@ -1,0 +1,18 @@
+div{
+    margin: 10px 10px 10px 10px;
+    list-style-type: none;
+}
+
+
+
+.box1 {
+    background-color: blue;
+}
+
+.box2 {
+    background-color: gray ;
+}
+
+.box3{
+    background-color: brown;
+}
