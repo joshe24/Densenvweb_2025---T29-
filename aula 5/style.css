@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+  }
+  
+  table {
+    border-collapse: collapse;
+    margin: 20px auto;
+    width: 60%;
+  }
+  
+  th, td {
+    border: 1px solid #444;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  th {
+    background-color: #eee;
+  }
+  
+  button {
+    margin: 10px;
+    padding: 8px 15px;
+    cursor: pointer;
+  }
+  
+  .total {
+    background-color: #d1ffd1;
+    font-weight: bold;
+  }
+  
