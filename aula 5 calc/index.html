@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="calc">
+    <input type="text" id="resultado" value="0" disabled>
+
+    <div class="teclado">
+      <button onclick="limpar()" class="limpar">C</button>
+      <button onclick="digitar('/')">÷</button>
+      <button onclick="digitar('*')">×</button>
+      <button onclick="digitar('-')">−</button>
+
+      <button onclick="digitar('7')">7</button>
+      <button onclick="digitar('8')">8</button>
+      <button onclick="digitar('9')">9</button>
+      <button onclick="digitar('+')">+</button>
+
+      <button onclick="digitar('4')">4</button>
+      <button onclick="digitar('5')">5</button>
+      <button onclick="digitar('6')">6</button>
+      <button onclick="calcular()" class="igual">=</button>
+
+      <button onclick="digitar('1')">1</button>
+      <button onclick="digitar('2')">2</button>
+      <button onclick="digitar('3')">3</button>
+      <button onclick="digitar('0')" style="grid-column: span 2;">0</button>
+      <button onclick="digitar('.')">.</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
