@@ -1,0 +1,29 @@
+<?php
+ $idade = array("joão" => "15", "maria" => "25", "josé" => "35");
+    foreach ($idade as $nome => $valor) {
+    echo ("Nome = " . $nome . "<br>" . "Valor = " . $valor);   
+    echo "<br>";    
+    }
+    $disciplinas = array("prog.web", "prog.web 2", "Banco de dados");
+    $professores = array("cleber", "fabiano", "marco");
+    
+    for ($i=0; $i < count($disciplinas); $i++){
+        echo "Disciplina: " . $disciplinas[$i] . " - " . "Professor: " . $professores[$i] . "<br>";
+    }
+
+    //pratica final
+
+    $boletim = array(array("Disciplina" => "geografia" , "Faltas" => "1" , "Média" => "10"),
+                    array("Disciplina" => "matemática" , "Faltas" => "3" , "Média" => "7"),
+                    array("Disciplina" => "história" , "Faltas" => "5" , "Média" => "9"),
+                    array("Disciplina" => "ingles" , "Faltas" => "6" , "Média" => "6"),
+                    array("Disciplina" => "portugues" , "Faltas" => "8" , "Média" => "8"));
+                
+            foreach($boletim as $b){
+                echo "<tr>
+                            <td>" . $b['Disciplina'] . "</td> 
+                            <td>" . $b['Faltas'] . "</td> 
+                            <td>" . $b['Média'] . "</td>
+                    </tr>";
+            }
+?>
