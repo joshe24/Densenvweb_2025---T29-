@@ -1,0 +1,3 @@
+Este projeto é um sistema de avaliação desenvolvido para estabelecimentos que desejam coletar opiniões de clientes sobre diferentes setores, como Recepção, Vendas, Caixa, Estacionamento e outros ambientes do local.
+O objetivo é facilitar o processo de coleta de feedback, permitindo que os clientes avaliem sua experiência de forma rápida e intuitiva.
+O sistema oferece recursos completos para registrar avaliações, organizar e gerenciar perguntas, controlar dispositivos (tablets) utilizados para a coleta e visualizar os resultados de maneira clara e estruturada. Dessa forma, o estabelecimento consegue acompanhar o desempenho de cada setor, identificar pontos fortes e áreas que precisam de melhoria, tudo por meio de uma interface simples e funcional.
