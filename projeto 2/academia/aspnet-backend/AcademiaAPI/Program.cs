@@ -5,15 +5,15 @@ using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Controllers
+
 builder.Services.AddControllers();
 
-// Entity Framework + SQLite
+
 builder.Services.AddDbContext<AcademiaContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")
         ?? "Data Source=academia.db"));
 
-// CORS (permite acesso do Laravel / qualquer frontend)
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", policy =>
@@ -22,7 +22,7 @@ builder.Services.AddCors(options =>
               .AllowAnyHeader());
 });
 
-// Swagger / OpenAPI
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
@@ -41,7 +41,7 @@ builder.Services.AddSwaggerGen(c =>
         Contact = new OpenApiContact { Name = "Sistema Academia", Email = "admin@academia.com" }
     });
 
-    // Include XML comments if available
+
     var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
     var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
     if (File.Exists(xmlPath))
@@ -50,19 +50,19 @@ builder.Services.AddSwaggerGen(c =>
 
 var app = builder.Build();
 
-// Auto-migrate and seed DB on startup
+
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<AcademiaContext>();
     db.Database.EnsureCreated();
 }
 
-// Always enable Swagger
+
 app.UseSwagger();
 app.UseSwaggerUI(c =>
 {
     c.SwaggerEndpoint("/swagger/v1/swagger.json", "Academia API v1");
-    c.RoutePrefix = string.Empty; // Swagger na raiz "/"
+    c.RoutePrefix = string.Empty; 
     c.DocumentTitle = "Academia API — Swagger UI";
 });
 

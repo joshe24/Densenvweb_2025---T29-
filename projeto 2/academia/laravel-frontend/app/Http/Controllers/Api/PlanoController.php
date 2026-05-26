@@ -9,9 +9,7 @@ use Illuminate\Http\JsonResponse;
 
 class PlanoController extends Controller
 {
-    /**
-     * GET /api/planos
-     */
+
     public function index(Request $request): JsonResponse
     {
         $query = Plano::query();
@@ -23,9 +21,7 @@ class PlanoController extends Controller
         return response()->json($query->orderBy('valor_mensal')->get());
     }
 
-    /**
-     * POST /api/planos
-     */
+ 
     public function store(Request $request): JsonResponse
     {
         $validated = $request->validate([
@@ -44,17 +40,13 @@ class PlanoController extends Controller
         return response()->json($plano, 201);
     }
 
-    /**
-     * GET /api/planos/{id}
-     */
+  
     public function show(int $id): JsonResponse
     {
         return response()->json(Plano::findOrFail($id));
     }
 
-    /**
-     * PUT /api/planos/{id}
-     */
+
     public function update(Request $request, int $id): JsonResponse
     {
         $plano = Plano::findOrFail($id);
@@ -74,9 +66,7 @@ class PlanoController extends Controller
         return response()->json($plano);
     }
 
-    /**
-     * DELETE /api/planos/{id}
-     */
+ 
     public function destroy(int $id): JsonResponse
     {
         $plano = Plano::findOrFail($id);

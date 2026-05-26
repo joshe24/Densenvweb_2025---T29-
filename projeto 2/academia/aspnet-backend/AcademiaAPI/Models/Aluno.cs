@@ -35,7 +35,7 @@ namespace AcademiaAPI.Models
 
         public DateTime CriadoEm { get; set; } = DateTime.UtcNow;
 
-        // Navigation
+
         public ICollection<Matricula> Matriculas { get; set; } = new List<Matricula>();
     }
 }

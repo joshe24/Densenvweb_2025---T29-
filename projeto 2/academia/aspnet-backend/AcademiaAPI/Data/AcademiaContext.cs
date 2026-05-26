@@ -16,7 +16,7 @@ namespace AcademiaAPI.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            // Aluno
+
             modelBuilder.Entity<Aluno>(entity =>
             {
                 entity.HasIndex(a => a.Cpf).IsUnique();
@@ -24,7 +24,7 @@ namespace AcademiaAPI.Data
                 entity.Property(a => a.ValorMensal).HasColumnType("decimal(10,2)");
             });
 
-            // Professor
+
             modelBuilder.Entity<Professor>(entity =>
             {
                 entity.HasIndex(p => p.Cpf).IsUnique();
@@ -32,13 +32,13 @@ namespace AcademiaAPI.Data
                 entity.HasIndex(p => p.Email).IsUnique();
             });
 
-            // Plano
+
             modelBuilder.Entity<Plano>(entity =>
             {
                 entity.Property(p => p.ValorMensal).HasColumnType("decimal(10,2)");
             });
 
-            // Matricula
+
             modelBuilder.Entity<Matricula>(entity =>
             {
                 entity.HasOne(m => m.Aluno)

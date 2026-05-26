@@ -1,7 +1,5 @@
 <?php
-// =====================================================
-// MIGRATION: 2024_01_01_000001_create_alunos_table.php
-// =====================================================
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -25,9 +23,7 @@ return new class extends Migration {
     public function down(): void { Schema::dropIfExists('alunos'); }
 };
 
-// ==========================================================
-// MIGRATION: 2024_01_01_000002_create_professores_table.php
-// ==========================================================
+
 return new class extends Migration {
     public function up(): void
     {
@@ -47,9 +43,7 @@ return new class extends Migration {
     public function down(): void { Schema::dropIfExists('professores'); }
 };
 
-// =====================================================
-// MIGRATION: 2024_01_01_000003_create_planos_table.php
-// =====================================================
+
 return new class extends Migration {
     public function up(): void
     {
@@ -69,9 +63,7 @@ return new class extends Migration {
     public function down(): void { Schema::dropIfExists('planos'); }
 };
 
-// ==========================================================
-// MIGRATION: 2024_01_01_000004_create_matriculas_table.php
-// ==========================================================
+
 return new class extends Migration {
     public function up(): void
     {

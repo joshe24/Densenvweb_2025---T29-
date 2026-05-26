@@ -24,13 +24,13 @@ class Matricula extends Model
         'data_fim'    => 'date',
     ];
 
-    // Status possíveis
+
     const STATUS_ATIVA     = 'Ativa';
     const STATUS_SUSPENSA  = 'Suspensa';
     const STATUS_CANCELADA = 'Cancelada';
     const STATUS_VENCIDA   = 'Vencida';
 
-    // Relacionamentos
+
     public function aluno()
     {
         return $this->belongsTo(Aluno::class);
@@ -46,7 +46,7 @@ class Matricula extends Model
         return $this->belongsTo(Professor::class);
     }
 
-    // Scopes
+    
     public function scopeAtivas($query)
     {
         return $query->where('status', self::STATUS_ATIVA);

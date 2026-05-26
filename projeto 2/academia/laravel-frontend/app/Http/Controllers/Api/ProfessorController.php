@@ -10,9 +10,7 @@ use Illuminate\Validation\Rule;
 
 class ProfessorController extends Controller
 {
-    /**
-     * GET /api/professores
-     */
+
     public function index(Request $request): JsonResponse
     {
         $query = Professor::withCount([
@@ -25,10 +23,7 @@ class ProfessorController extends Controller
 
         return response()->json($query->orderBy('nome')->get());
     }
-
-    /**
-     * POST /api/professores
-     */
+  
     public function store(Request $request): JsonResponse
     {
         $validated = $request->validate([
@@ -47,9 +42,7 @@ class ProfessorController extends Controller
         return response()->json($professor, 201);
     }
 
-    /**
-     * GET /api/professores/{id}
-     */
+    
     public function show(int $id): JsonResponse
     {
         $professor = Professor::with([
@@ -59,9 +52,7 @@ class ProfessorController extends Controller
         return response()->json($professor);
     }
 
-    /**
-     * PUT /api/professores/{id}
-     */
+
     public function update(Request $request, int $id): JsonResponse
     {
         $professor = Professor::findOrFail($id);
@@ -79,9 +70,7 @@ class ProfessorController extends Controller
         return response()->json($professor);
     }
 
-    /**
-     * DELETE /api/professores/{id}
-     */
+
     public function destroy(int $id): JsonResponse
     {
         $professor = Professor::findOrFail($id);
@@ -97,9 +86,6 @@ class ProfessorController extends Controller
         return response()->json(null, 204);
     }
 
-    /**
-     * GET /api/professores/{id}/alunos
-     */
     public function alunos(int $id): JsonResponse
     {
         $professor = Professor::findOrFail($id);

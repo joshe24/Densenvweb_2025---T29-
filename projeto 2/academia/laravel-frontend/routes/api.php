@@ -6,51 +6,42 @@ use App\Http\Controllers\Api\ProfessorController;
 use App\Http\Controllers\Api\PlanoController;
 use App\Http\Controllers\Api\MatriculaController;
 
-/*
-|--------------------------------------------------------------------------
-| Academia API Routes
-|--------------------------------------------------------------------------
-| Todas as rotas retornam JSON.
-| Base URL: http://localhost:8000/api
-|--------------------------------------------------------------------------
-*/
 
-// ========== ALUNOS ==========
 Route::prefix('alunos')->group(function () {
-    Route::get('/',          [AlunoController::class, 'index']);      // GET    /api/alunos
-    Route::post('/',         [AlunoController::class, 'store']);      // POST   /api/alunos
-    Route::get('/cpf/{cpf}', [AlunoController::class, 'findByCpf']); // GET    /api/alunos/cpf/{cpf}
-    Route::get('/{id}',      [AlunoController::class, 'show']);       // GET    /api/alunos/{id}
-    Route::put('/{id}',      [AlunoController::class, 'update']);     // PUT    /api/alunos/{id}
-    Route::delete('/{id}',   [AlunoController::class, 'destroy']);    // DELETE /api/alunos/{id}
+    Route::get('/',          [AlunoController::class, 'index']);     
+    Route::post('/',         [AlunoController::class, 'store']);      
+    Route::get('/cpf/{cpf}', [AlunoController::class, 'findByCpf']); 
+    Route::get('/{id}',      [AlunoController::class, 'show']);      
+    Route::put('/{id}',      [AlunoController::class, 'update']);     
+    Route::delete('/{id}',   [AlunoController::class, 'destroy']);    
 });
 
-// ========== PROFESSORES ==========
+
 Route::prefix('professores')->group(function () {
-    Route::get('/',           [ProfessorController::class, 'index']);   // GET    /api/professores
-    Route::post('/',          [ProfessorController::class, 'store']);   // POST   /api/professores
-    Route::get('/{id}',       [ProfessorController::class, 'show']);    // GET    /api/professores/{id}
-    Route::put('/{id}',       [ProfessorController::class, 'update']);  // PUT    /api/professores/{id}
-    Route::delete('/{id}',    [ProfessorController::class, 'destroy']); // DELETE /api/professores/{id}
-    Route::get('/{id}/alunos',[ProfessorController::class, 'alunos']);  // GET    /api/professores/{id}/alunos
+    Route::get('/',           [ProfessorController::class, 'index']);   
+    Route::post('/',          [ProfessorController::class, 'store']);   
+    Route::get('/{id}',       [ProfessorController::class, 'show']);   
+    Route::put('/{id}',       [ProfessorController::class, 'update']);  
+    Route::delete('/{id}',    [ProfessorController::class, 'destroy']); 
+    Route::get('/{id}/alunos',[ProfessorController::class, 'alunos']);  
 });
 
-// ========== PLANOS ==========
+
 Route::prefix('planos')->group(function () {
-    Route::get('/',         [PlanoController::class, 'index']);   // GET    /api/planos
-    Route::post('/',        [PlanoController::class, 'store']);   // POST   /api/planos
-    Route::get('/{id}',     [PlanoController::class, 'show']);    // GET    /api/planos/{id}
-    Route::put('/{id}',     [PlanoController::class, 'update']);  // PUT    /api/planos/{id}
-    Route::delete('/{id}',  [PlanoController::class, 'destroy']); // DELETE /api/planos/{id}
+    Route::get('/',         [PlanoController::class, 'index']);   
+    Route::post('/',        [PlanoController::class, 'store']);  
+    Route::get('/{id}',     [PlanoController::class, 'show']);    
+    Route::put('/{id}',     [PlanoController::class, 'update']);  
+    Route::delete('/{id}',  [PlanoController::class, 'destroy']); 
 });
 
-// ========== MATRÍCULAS ==========
+
 Route::prefix('matriculas')->group(function () {
-    Route::get('/',                    [MatriculaController::class, 'index']);    // GET    /api/matriculas
-    Route::post('/',                   [MatriculaController::class, 'store']);    // POST   /api/matriculas
-    Route::get('/{id}',                [MatriculaController::class, 'show']);     // GET    /api/matriculas/{id}
-    Route::put('/{id}',                [MatriculaController::class, 'update']);   // PUT    /api/matriculas/{id}
-    Route::delete('/{id}',             [MatriculaController::class, 'destroy']);  // DELETE /api/matriculas/{id}
-    Route::patch('/{id}/cancelar',     [MatriculaController::class, 'cancelar']); // PATCH  /api/matriculas/{id}/cancelar
-    Route::patch('/{id}/suspender',    [MatriculaController::class, 'suspender']);// PATCH  /api/matriculas/{id}/suspender
+    Route::get('/',                    [MatriculaController::class, 'index']);    
+    Route::post('/',                   [MatriculaController::class, 'store']);    
+    Route::get('/{id}',                [MatriculaController::class, 'show']);     
+    Route::put('/{id}',                [MatriculaController::class, 'update']);   
+    Route::delete('/{id}',             [MatriculaController::class, 'destroy']);  
+    Route::patch('/{id}/cancelar',     [MatriculaController::class, 'cancelar']); 
+    Route::patch('/{id}/suspender',    [MatriculaController::class, 'suspender']);
 });

@@ -12,7 +12,7 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        // Planos
+
         $planos = Plano::insert([
             [
                 'nome' => 'Básico',
@@ -46,7 +46,7 @@ class DatabaseSeeder extends Seeder
             ],
         ]);
 
-        // Professores
+      
         Professor::insert([
             [
                 'nome' => 'Carlos Silva',
@@ -70,7 +70,7 @@ class DatabaseSeeder extends Seeder
             ],
         ]);
 
-        // Alunos
+     
         $aluno1 = Aluno::create([
             'nome' => 'João Pereira',
             'cpf' => '333.333.333-33',
@@ -91,7 +91,7 @@ class DatabaseSeeder extends Seeder
             'ativo' => true,
         ]);
 
-        // Matrículas
+     
         Matricula::create([
             'aluno_id'     => $aluno1->id,
             'plano_id'     => 2,

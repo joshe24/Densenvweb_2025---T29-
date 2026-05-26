@@ -37,7 +37,7 @@ namespace AcademiaAPI.Models
 
         public DateTime CriadoEm { get; set; } = DateTime.UtcNow;
 
-        // Navigation Properties
+
         [ForeignKey("AlunoId")]
         public Aluno? Aluno { get; set; }
 

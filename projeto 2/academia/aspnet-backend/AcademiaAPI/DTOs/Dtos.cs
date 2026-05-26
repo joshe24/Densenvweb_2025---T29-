@@ -3,7 +3,7 @@ using AcademiaAPI.Models;
 
 namespace AcademiaAPI.DTOs
 {
-    // ===== ALUNO =====
+
     public class AlunoCreateDto
     {
         [Required] [MaxLength(100)] public string Nome { get; set; } = string.Empty;
@@ -38,7 +38,7 @@ namespace AcademiaAPI.DTOs
         public int TotalMatriculas { get; set; }
     }
 
-    // ===== PROFESSOR =====
+
     public class ProfessorCreateDto
     {
         [Required] [MaxLength(100)] public string Nome { get; set; } = string.Empty;
@@ -72,7 +72,7 @@ namespace AcademiaAPI.DTOs
         public int TotalAlunos { get; set; }
     }
 
-    // ===== PLANO =====
+
     public class PlanoCreateDto
     {
         [Required] [MaxLength(100)] public string Nome { get; set; } = string.Empty;
@@ -107,7 +107,7 @@ namespace AcademiaAPI.DTOs
         public DateTime CriadoEm { get; set; }
     }
 
-    // ===== MATRICULA =====
+
     public class MatriculaCreateDto
     {
         [Required] public int AlunoId { get; set; }

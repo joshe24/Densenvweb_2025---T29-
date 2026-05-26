@@ -12,9 +12,7 @@ use Illuminate\Http\JsonResponse;
 
 class MatriculaController extends Controller
 {
-    /**
-     * GET /api/matriculas
-     */
+
     public function index(Request $request): JsonResponse
     {
         $query = Matricula::with(['aluno', 'plano', 'professor']);
@@ -26,9 +24,7 @@ class MatriculaController extends Controller
         return response()->json($query->latest()->get());
     }
 
-    /**
-     * POST /api/matriculas
-     */
+
     public function store(Request $request): JsonResponse
     {
         $validated = $request->validate([
@@ -75,9 +71,7 @@ class MatriculaController extends Controller
         return response()->json($matricula->load(['aluno', 'plano', 'professor']), 201);
     }
 
-    /**
-     * GET /api/matriculas/{id}
-     */
+
     public function show(int $id): JsonResponse
     {
         return response()->json(
@@ -85,9 +79,7 @@ class MatriculaController extends Controller
         );
     }
 
-    /**
-     * PUT /api/matriculas/{id}
-     */
+    
     public function update(Request $request, int $id): JsonResponse
     {
         $matricula = Matricula::findOrFail($id);
@@ -103,10 +95,7 @@ class MatriculaController extends Controller
         return response()->json($matricula->load(['aluno', 'plano', 'professor']));
     }
 
-    /**
-     * DELETE /api/matriculas/{id}
-     * Cancela a matrícula (soft-cancel via status)
-     */
+
     public function destroy(int $id): JsonResponse
     {
         $matricula = Matricula::findOrFail($id);
@@ -115,9 +104,7 @@ class MatriculaController extends Controller
         return response()->json(null, 204);
     }
 
-    /**
-     * PATCH /api/matriculas/{id}/cancelar
-     */
+
     public function cancelar(int $id): JsonResponse
     {
         $matricula = Matricula::findOrFail($id);
@@ -126,9 +113,7 @@ class MatriculaController extends Controller
         return response()->json(['message' => 'Matrícula cancelada com sucesso.', 'id' => $id]);
     }
 
-    /**
-     * PATCH /api/matriculas/{id}/suspender
-     */
+
     public function suspender(int $id): JsonResponse
     {
         $matricula = Matricula::findOrFail($id);

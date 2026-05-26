@@ -10,10 +10,7 @@ use Illuminate\Validation\Rule;
 
 class AlunoController extends Controller
 {
-    /**
-     * GET /api/alunos
-     * Lista todos os alunos
-     */
+    
     public function index(Request $request): JsonResponse
     {
         $query = Aluno::withCount('matriculas');
@@ -36,10 +33,7 @@ class AlunoController extends Controller
         return response()->json($alunos);
     }
 
-    /**
-     * POST /api/alunos
-     * Cria novo aluno
-     */
+
     public function store(Request $request): JsonResponse
     {
         $validated = $request->validate([
@@ -58,10 +52,7 @@ class AlunoController extends Controller
         return response()->json($aluno, 201);
     }
 
-    /**
-     * GET /api/alunos/{id}
-     * Exibe aluno por ID
-     */
+
     public function show(int $id): JsonResponse
     {
         $aluno = Aluno::with(['matriculas.plano', 'matriculas.professor'])->findOrFail($id);
@@ -69,10 +60,7 @@ class AlunoController extends Controller
         return response()->json($aluno);
     }
 
-    /**
-     * PUT /api/alunos/{id}
-     * Atualiza aluno
-     */
+
     public function update(Request $request, int $id): JsonResponse
     {
         $aluno = Aluno::findOrFail($id);
@@ -91,10 +79,7 @@ class AlunoController extends Controller
         return response()->json($aluno);
     }
 
-    /**
-     * DELETE /api/alunos/{id}
-     * Remove aluno
-     */
+
     public function destroy(int $id): JsonResponse
     {
         $aluno = Aluno::findOrFail($id);
@@ -110,10 +95,7 @@ class AlunoController extends Controller
         return response()->json(null, 204);
     }
 
-    /**
-     * GET /api/alunos/cpf/{cpf}
-     * Busca aluno por CPF
-     */
+
     public function findByCpf(string $cpf): JsonResponse
     {
         $aluno = Aluno::where('cpf', $cpf)->with('matriculas')->firstOrFail();

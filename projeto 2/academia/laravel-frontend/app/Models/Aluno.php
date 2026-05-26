@@ -24,7 +24,7 @@ class Aluno extends Model
         'ativo' => 'boolean',
     ];
 
-    // Relacionamentos
+    
     public function matriculas()
     {
         return $this->hasMany(Matricula::class);
